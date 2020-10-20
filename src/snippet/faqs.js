@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordian } from '../components';
+import TrialForm from '../components/trialform/trialform';
 import faqsJson from '../jsons/faqs.json';
 
 export const FAQSnippet = () => {
@@ -12,6 +13,15 @@ export const FAQSnippet = () => {
           <Accordian.Body>{data.body}</Accordian.Body>
         </Accordian.Data>
       ))}
+      <Accordian.Data />
+
+      <TrialForm>
+        <TrialForm.Input placeholder='Email Address' />
+        <TrialForm.Button>Try it now!</TrialForm.Button>
+        <TrialForm.Text>
+          Ready? Enter email to create or restart membership
+        </TrialForm.Text>
+      </TrialForm>
     </Accordian>
   );
 };
