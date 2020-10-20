@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footer } from '../components';
 
-export const FooterSnipper = () => {
+export const FooterSnippet = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Contact us</Footer.Title>

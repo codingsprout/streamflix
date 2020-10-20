@@ -1,12 +1,14 @@
 import React from 'react';
-import { FooterSnipper } from './snippet/footer';
+import { FAQSnippet } from './snippet/faqs';
+import { FooterSnippet } from './snippet/footer';
 import { JumbotronSnippet } from './snippet/jumbotron';
 
 function App() {
   return (
     <>
-      <JumbotronSnippet />;
-      <FooterSnipper />
+      <JumbotronSnippet />
+      <FAQSnippet />
+      <FooterSnippet />
     </>
   );
 }

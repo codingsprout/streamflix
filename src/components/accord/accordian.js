@@ -1,4 +1,13 @@
 import React, { createContext, useState, useContext } from 'react';
+import {
+  Container,
+  Frame,
+  Title,
+  Data,
+  Inner,
+  Header,
+  Body,
+} from './accordianstyle';
 
 const ToggleContext = createContext();
 
@@ -37,6 +46,12 @@ Accordian.Header = function AccordianHeader({ children, ...restProps }) {
       {...restProps}
     >
       {children}
+
+      {toggleShow ? (
+        <img src='/images/icons/close-slim.png' alt='Close' />
+      ) : (
+        <img src='/images/icons/add.png' alt='Open' />
+      )}
     </Header>
   );
 };
@@ -46,3 +61,5 @@ Accordian.Body = function AccordianBody({ children, ...restProps }) {
 
   return toggleShow ? <Body {...restProps}>{children}</Body> : null;
 };
+
+export default Accordian;
