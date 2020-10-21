@@ -18,6 +18,7 @@ export const FAQSnippet = () => {
       <TrialForm>
         <TrialForm.Input placeholder='Email Address' />
         <TrialForm.Button>Try it now!</TrialForm.Button>
+        <TrialForm.Break />
         <TrialForm.Text>
           Ready? Enter email to create or restart membership
         </TrialForm.Text>
