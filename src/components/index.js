@@ -5,3 +5,5 @@ export { default as TrialForm } from './trialform/trialform';
 export { default as Header } from './header/header';
 export { default as Feature } from './feature/feature';
 export { default as Form } from './form/form';
+export { default as Profile } from './profile/profile';
+export { default as Loading } from './loading/loading';

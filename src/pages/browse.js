@@ -1,7 +1,15 @@
 import React from 'react';
+import { useContent } from '../hooks';
+import { BrowseSnippet } from '../snippet/browse';
+import selectionFilter from '../utility/selection-filter';
 
 function Browse() {
-  return <p>Browse</p>;
+  const { series } = useContent('series');
+  const { films } = useContent('films');
+
+  const slides = selectionFilter({ series, films });
+
+  return <BrowseSnippet slides={slides} />;
 }
 
 export default Browse;
