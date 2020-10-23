@@ -4,7 +4,7 @@ import { Footer } from '../components';
 export const FooterSnippet = () => {
   return (
     <Footer>
-      <Footer.Title>Questions? Contact us</Footer.Title>
+      <Footer.Title>Questions? Contact Cero</Footer.Title>
       <Footer.Break />
       <Footer.Row>
         <Footer.Col>
@@ -37,7 +37,7 @@ export const FooterSnippet = () => {
         </Footer.Col>
       </Footer.Row>
       <Footer.Break />
-      <Footer.Text>Streamflix by Cero</Footer.Text>
+      <Footer.Text>Netflix by Cero</Footer.Text>
     </Footer>
   );
 };
