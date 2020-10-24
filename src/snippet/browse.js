@@ -5,6 +5,7 @@ import { Card, Loading, Header } from '../components';
 import { FooterSnippet } from '../snippet/footer';
 import * as ROUTES from '../constant/routes';
 import logo from '../logo.svg';
+import Player from '../components/player/player';
 
 export const BrowseSnippet = ({ slides }) => {
   const [category, setCategory] = useState('series');
@@ -102,7 +103,10 @@ export const BrowseSnippet = ({ slides }) => {
               ))}
             </Card.Entity>
             <Card.Feature category={category}>
-              <p>Hello</p>
+              <Player>
+                <Player.Button />
+                <Player.Video src='/videos/bunny.mp4' />
+              </Player>
             </Card.Feature>
           </Card>
         ))}
