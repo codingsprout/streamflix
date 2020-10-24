@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { SelectProfileSnippet } from './profiles';
 import { FirebaseContext } from '../context/firebase';
-import { Card, Loading, Header } from '../components';
+import { Card, Loading, Header, Player } from '../components';
 import { FooterSnippet } from '../snippet/footer';
 import * as ROUTES from '../constant/routes';
 import logo from '../logo.svg';
-import Player from '../components/player/player';
+import Fuse from 'fuse.js';
 
 export const BrowseSnippet = ({ slides }) => {
   const [category, setCategory] = useState('series');
@@ -26,6 +26,19 @@ export const BrowseSnippet = ({ slides }) => {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre'],
+    });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
+      setSlideRows(results);
+    } else {
+      setSlideRows(slide[category]);
+    }
+  }, [searchTerm]);
 
   //Be careful with the return! Nested ternary!!!!!!!!
 
