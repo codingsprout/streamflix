@@ -36,7 +36,7 @@ export const BrowseSnippet = ({ slides }) => {
     if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
       setSlideRows(results);
     } else {
-      setSlideRows(slide[category]);
+      setSlideRows(slides[category]);
     }
   }, [searchTerm]);
 
